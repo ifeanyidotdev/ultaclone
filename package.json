@@ -1,0 +1,10 @@
+{
+  "name": "ulta_clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ifeanyichukwu Sampson Ebenezer <40169444+Mremmalex@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cd frontend && yarn dev && cd .. && cd backend && yarn dev"
+  }
+}
