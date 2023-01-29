@@ -17,7 +17,7 @@ function DiscoverSection() {
         </p>
       </div>
 
-      <div className="flex md:flex-wrap lg:flex-nowrap overflow-x-auto lg:overflow-hidden lg:px-10 lg:h-[30em] ">
+      <div className="h-[50em] flex overflow-x-auto">
         <DiscoverCard />
         <DiscoverCard />
         <DiscoverCard />
@@ -26,29 +26,36 @@ function DiscoverSection() {
 
       {/*the today's deals section*/}
       <div className="pt-7 text-start">
-        <p className="font-medium text-[27px] pl-[170px] pb-8"> Todays deals</p>
+        <p className="font-medium text-[17px] lg:text-[27px] pl-[40px] lg:pl-[170px] pb-2">
+          {" "}
+          Todays deals
+        </p>
       </div>
-      <div className="bg-gray-50 h-[36em] w-[70em] flex items-center pt-[3em] pl-20 ml-[10em]">
-        <Image
-          src={foundation_one}
-          alt="foundation"
-          className="w-[400px] h-[400px] pl-[20px]"
-        />
-        <div className=" flex flex-col items-start pl-[6em] space-y-5">
-          <div className="">
-            <p className=" font-medium text-sm rounded bg-purple-400">
-              Ends Jan 28
+      <div className="flex flex-col lg:flex-row items-center px-5 h-[50em]">
+        <div className="bg-gray-50 h-[39em] w-[20em] lg:h-[36em] lg:w-[70em] flex flex-col lg:flex-row justify-center items-center space-y-3 pt-[1em] lg:pl-20 lg:ml-[10em]">
+          <Image
+            src={foundation_one}
+            alt="foundation"
+            className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] lg:pl-[20px]"
+          />
+          <div className=" flex flex-col items-start lg:pl-[6em] space-y-5">
+            <div className="">
+              <p className=" font-medium text-sm rounded bg-purple-400">
+                Ends Jan 28
+              </p>
+            </div>
+            <p> APP EXCLUSIVE</p>
+            <h3 className="lg:text-2xl font-semibold">
+              up to 50% off Complexsion
+            </h3>
+            <p className="text-[13px] lg:text-md font-thin">
+              Choose from Lencome, Estee Lauder & more
             </p>
-          </div>
-          <p> APP EXCLUSIVE</p>
-          <h3 className="text-2xl font-semibold">up to 50% off Complexsion</h3>
-          <p className="text-md font-thin">
-            Choose from Lencome, Estee Lauder & more
-          </p>
 
-          <button className=" text-start py-2  items-center border-b-[2px] border-b-black">
-            Download our app
-          </button>
+            <button className=" text-start py-2  items-center border-b-[2px] border-b-black">
+              Download our app
+            </button>
+          </div>
         </div>
       </div>
     </div>

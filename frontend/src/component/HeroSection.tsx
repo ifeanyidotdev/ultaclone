@@ -9,10 +9,10 @@ function HeroSection(props: Props) {
       <div className="flex lg:hidden">
         <Image src={hero_mobile_image} alt="hero image mobile" />
       </div>
-      <div className="flex flex-col justify-center items-center lg:items-start h-[30em] lg:h-0 bg-white lg:pl-[10em] lg:pt-[16em] space-y-4">
+      <div className="flex flex-col justify-center items-center lg:items-start h-[30em] lg:h-[0em] bg-white lg:bg-inherit lg:pl-[10em] lg:pt-[20em] space-y-4">
         <p className="font-semibold">NOW AT ULTA BEAUTY</p>
         <h2 className="font-semibold text-7xl">DIOR</h2>
-        <p className="w-[22em] font-serif text-xl">
+        <p className=" lg:w-[22em] font-serif text-[18px] lg:text-xl text-center">
           Experience the couture makeup and skin care icons and rediscover your
           fragrance favorites.
         </p>
