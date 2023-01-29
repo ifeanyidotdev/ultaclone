@@ -1,7 +1,7 @@
 import React from "react";
 
 function ItemCard() {
-  return <div>ItemCard</div>;
+  return <div className="h-10">ItemCard</div>;
 }
 
 export default ItemCard;

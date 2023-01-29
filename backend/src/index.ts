@@ -12,3 +12,4 @@ app.use("/api/user", userRouter);
         console.log("application stated on port 3000");
     });
 })();
+

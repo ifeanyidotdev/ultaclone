@@ -5,7 +5,7 @@ import hero_mobile_image from "src/assets/hero_mobile_image.webp";
 type Props = {};
 function HeroSection(props: Props) {
   return (
-    <div className="bg-no-repeat lg:bg-cover lg:bg-[url('../assets/hero_image.webp')] lg:h-[670px] space-y-2">
+    <div className="bg-no-repeat lg:bg-cover lg:bg-[url('../assets/hero_image.webp')] lg:h-[670px] space-y-2 overflow-hidden">
       <div className="flex lg:hidden">
         <Image src={hero_mobile_image} alt="hero image mobile" />
       </div>

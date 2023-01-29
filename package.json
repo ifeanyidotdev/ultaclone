@@ -6,5 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "cd frontend && yarn dev && cd .. && cd backend && yarn dev"
+  },
+  "dependencies": {
+    "yarn": "^1.22.19"
   }
 }

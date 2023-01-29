@@ -3,8 +3,15 @@ import Image from "next/image";
 import DiscoverCard from "@/component/ui/DiscoverCard";
 import foundation_one from "@/assets/foundation_one.webp";
 
+type Discover =  {
+  dicover: JSX.Element
+}
+
+
 // handles the Discover section of the application
 function DiscoverSection() {
+  const [discover, setDiscover] = React.useState<Discover[]>([])
+  
   return (
     <div className="text-center bg-white">
       <div className="">
