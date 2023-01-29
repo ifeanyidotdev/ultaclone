@@ -10,14 +10,14 @@ type Props = {};
 /** this a component for the navigation bar of the application */
 export function Navbar(props: Props) {
   return (
-    <div className="py-4 w-full bg-white flex justify-between fixed items-center">
+    <div className="py-4 w-full bg-white flex justify-between sticky top-0 z-50 items-center">
       {/*Logo navigation*/}
       <div className=" px-2 py-2 flex space-x-1 item-center">
         <div className="pr-3 lg:border-r-2 lg:border-r-black ">
           <HiOutlineMenu className="h-8 w-8" />
           <p className="lg:hidden font-semibold text-[0.7em] ">Menu</p>
         </div>
-     
+
         <div className="lg:hidden">
           <SlMagnifier className="h-8 w-8" />
           <p className="font-semibold text-[0.7em]">Search</p>

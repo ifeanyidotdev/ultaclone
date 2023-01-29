@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Navbar } from "@/component/Navbar";
 import HeroSection from "@/component/HeroSection";
 import DiscoverSection from "@/component/DiscoverSection";
+import InfoCard from "@/component/InfoCard";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <InfoCard />
       <HeroSection />
       <DiscoverSection />
     </>
