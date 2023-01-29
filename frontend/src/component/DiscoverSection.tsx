@@ -7,15 +7,17 @@ import foundation_one from "@/assets/foundation_one.webp";
 function DiscoverSection() {
   return (
     <div className="text-center bg-white">
-      <h2 className="text-5xl font-semibold pt-10 pb-3">
-        Discover DIOR at Ulta Beauty
-      </h2>
-      <p className="text-2xl font-serif py-3 pb-5">
-        Step into a world celebrating confidence, individual beauty, and
-        savoir-faire excellence.
-      </p>
+      <div className="">
+        <h2 className=" text-2xl lg:text-5xl font-semibold pt-10 pb-3">
+          Discover DIOR at Ulta Beauty
+        </h2>
+        <p className="font-medium text-clip lg:text-2xl font-serif py-1 pb-5">
+          Step into a world celebrating confidence, individual beauty, and
+          savoir-faire excellence.
+        </p>
+      </div>
 
-      <div className="flex overflow-x-auto md:overflow-hidden px-10">
+      <div className="flex md:flex-wrap lg:flex-nowrap overflow-x-auto lg:overflow-hidden lg:px-10 lg:h-[30em] ">
         <DiscoverCard />
         <DiscoverCard />
         <DiscoverCard />
