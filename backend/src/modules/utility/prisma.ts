@@ -1,7 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 
 
-const prisma = PrismaClient()
+// initilization for the dataase orm
+
+const prisma = new PrismaClient()
 
 
 export default prisma

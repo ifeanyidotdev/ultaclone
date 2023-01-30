@@ -28,7 +28,6 @@ model Product {
     price       Int
     image       String
     description String
-    category    String
     quantity    Int
     Purchase    Purchase[]
 }
