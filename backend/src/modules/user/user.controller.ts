@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
 import { UserService } from "./user.service";
 
-const userService: UserService = new UserService();
+// const userService: UserService = new UserService();
 class UserController {
+    private userService: UserService = new UserService();
+
     async get(req: Request, res: Response) {
         return res.json({ message: "hello auth" });
     }
@@ -10,7 +12,7 @@ class UserController {
     async post(req: Request, res: Response) {
         const { email, password } = req.body;
         try {
-            const isUserExist = await userService.findUserByEmail(email);
+            const isUserExist = await this.userService.findUserByEmail(email);
             if (isUserExist) {
                 return res.status(400).json({
                     message: "user with email exits",
