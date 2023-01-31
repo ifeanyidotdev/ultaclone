@@ -1,3 +1,4 @@
+import { mkdir } from "fs";
 import multer from "multer";
 import path from "path";
 
@@ -5,7 +6,8 @@ import path from "path";
 const upload = multer({
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, path.join(__dirname, "../../../public/static"));
+            const upload_path = path.join(__dirname, "../../../public/static");
+            mkdir(upload_path, (err) => cb(null, upload_path));
         },
     }),
 });
