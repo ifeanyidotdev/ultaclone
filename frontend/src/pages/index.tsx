@@ -10,7 +10,7 @@ import { Product } from "@/types/data.types";
 export default function Home() {
   const [product, setProduct] = useState<Product[]>([]);
 
-  const base_url = "http://localhost:8000";
+  const base_url = "https://ultaclone-production.up.railway.app";
 
   async function getProduct() {
     try {

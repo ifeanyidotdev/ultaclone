@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "@prisma/client": "^4.9.0",
+        "@types/cors": "^2.8.13",
         "axios": "^1.2.6",
         "cloudinary": "^1.33.0",
         "cors": "^2.8.5",
