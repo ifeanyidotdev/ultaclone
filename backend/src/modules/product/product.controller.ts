@@ -110,6 +110,22 @@ class ProductController {
             return res.status(500).json({ message: "internal server error" });
         }
     }
+
+    async getSingleProduct(req: Request, res: Response): Promise<Response> {
+        const product_id: number = Number(req.params.id);
+        try {
+            const product = await productService.getProductById(product_id);
+            if (!product) {
+                return res.status(400).json({ message: "product not found" });
+            }
+            return res
+                .status(200)
+                .json({ message: "successful", data: product });
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ message: "internal server error" });
+        }
+    }
 }
 /**
  * takes in a file/image and returns a string/ url of the image pointing to tha cloud

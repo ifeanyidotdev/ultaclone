@@ -7,7 +7,10 @@ function Product(): JSX.Element {
 
   return (
     <div>
-      <h2>{id}</h2>
+      <div>
+        <form action="" method="post"></form>
+      </div>
+      <div></div>
     </div>
   );
 }
