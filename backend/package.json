@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "tsnd --exit-child src/index.ts",
-        "build": "tsc",
+        "build": "tsc && npx prisma migrate deploy",
         "start": "node build/index.js"
     },
     "devDependencies": {
