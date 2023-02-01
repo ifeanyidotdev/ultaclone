@@ -65,7 +65,11 @@ function Product(): JSX.Element {
   }, [id]);
 
   if (!product) {
-    return <h2>loading...</h2>;
+    return (
+      <div className="flex justify-center items-center  content-center">
+        <h2 className="text-2xl font-semibold">loading...</h2>
+      </div>
+    );
   }
   return (
     <>
@@ -103,8 +107,8 @@ function Product(): JSX.Element {
             name="phone"
             onChange={(e) => setPhone(e.currentTarget.value)}
           />
-          {detailError ?? (
-            <p className="text-red">please provide your details</p>
+          {detailError && (
+            <p className="text-red-500">please provide your details</p>
           )}
           <button
             onClick={purchaseHandler}
