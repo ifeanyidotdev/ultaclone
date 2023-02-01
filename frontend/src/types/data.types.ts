@@ -6,3 +6,5 @@ export interface Product {
   description: string;
   quantity: number;
 }
+
+export const BASE_URL = "https://ultaclone-production.up.railway.app";

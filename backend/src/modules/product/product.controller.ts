@@ -2,7 +2,7 @@ import axios from "axios";
 import { Request, Response } from "express";
 import cloud from "../utility/cloud";
 import path from "path";
-import { Product, ProductType } from "./product.types";
+import { Product, ProductType, PurchaseData } from "./product.types";
 import ProductService from "./product.service";
 import { UploadApiResponse } from "cloudinary";
 
@@ -72,15 +72,16 @@ class ProductController {
     async payment(req: Request, res: Response): Promise<Response> {
         const product_id: number = Number(req.params.id);
         const { url, email, phonenumber, name } = req.body;
+        const transaction_ref = Math.round(Math.random() * 1000000000000000);
         try {
             const product = await productService.getProductById(product_id);
             if (!product) {
                 return res.status(400).json({ message: "product not found" });
             }
-
+            console.log(transaction_ref);
             //configure flutter wave data
             const data = {
-                tx_ref: "hooli-tx-1920bbtytty",
+                tx_ref: transaction_ref.toString(),
                 amount: String(product.price),
                 currency: "NGN",
                 redirect_url: url,
@@ -102,6 +103,19 @@ class ProductController {
                 }
             );
             console.log(response.data);
+
+            const purchase_data: PurchaseData = {
+                product_id: product_id,
+                tx_ref: transaction_ref.toString(),
+                amount: product.price,
+                customer: {
+                    email: email,
+                    phonenumber: phonenumber,
+                    name: name,
+                },
+            };
+
+            await productService.createPurchaseByProductId(purchase_data);
             return res
                 .status(200)
                 .json({ message: "successful", data: response.data.data.link });
@@ -111,6 +125,27 @@ class ProductController {
         }
     }
 
+    /**
+     * handles the completion of a purchase from the flutter wave payment gateway
+     */
+    async purchaseComplete(req: Request, res: Response) {
+        const { tx_ref, status } = req.body;
+        try {
+            const purchase = await productService.getPurchaseByTxRef(tx_ref);
+            if (!purchase) {
+                return res.status(400).json({ message: "purchase not found" });
+            }
+            await productService.updatePurchaseByTransactionRef(tx_ref, status);
+            return res.status(200).json({ message: "successful" });
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ message: "internal server error" });
+        }
+    }
+
+    /**
+     * returns a single product by id
+     */
     async getSingleProduct(req: Request, res: Response): Promise<Response> {
         const product_id: number = Number(req.params.id);
         try {

@@ -5,13 +5,11 @@ import { Navbar } from "@/component/Navbar";
 import HeroSection from "@/component/HeroSection";
 import DiscoverSection from "@/component/DiscoverSection";
 import InfoCard from "@/component/InfoCard";
-import { Product } from "@/types/data.types";
+import { BASE_URL, Product } from "@/types/data.types";
 import ProductSection from "@/component/ProductSection";
 
 export default function Home() {
-  const [product, setProduct] = useState<Product[]>([]);
-
-  const base_url = "https://ultaclone-production.up.railway.app";
+  const [product, setProducts] = useState<Product[]>([]);
 
   const has_loaded = true;
 
@@ -19,9 +17,9 @@ export default function Home() {
     async function getProduct() {
       try {
         const response_data = await axios.get(
-          `${base_url}/api/product/allProduct`
+          `${BASE_URL}/api/product/allProduct`
         );
-        setProduct(response_data.data.data);
+        setProducts(await response_data.data.data);
       } catch (error) {
         console.log(error);
       }
