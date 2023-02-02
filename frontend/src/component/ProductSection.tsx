@@ -8,8 +8,9 @@ type Props = {
 
 function ProductSection(props: Props) {
   const products = props.products;
+
   return (
-    <div className="flex overflow-x-scroll snap-x-mandatory scroll-p-3 p-1 gap-1 lg:overflow-x-scroll lg:snap-proximity bg-white shadow-xl rounded-lg">
+    <div className="flex overflow-x-scroll scrollbar snap-x-mandatory scroll-p-3 p-1 gap-1 bg-white ">
       {products.map((product) => (
         <div key={product.id} className="flex-start p-2 gap-1 snap-start ">
           <ItemCard

@@ -23,10 +23,7 @@ function DiscoverSection() {
         </p>
       </div>
 
-      <div className="flex overflow-x-scroll snap-x-mandatory scroll-p-3 gap-1 lg:overflow-hidden lg:overflow-no-scroll">
-        <DiscoverCard />
-        <DiscoverCard />
-        <DiscoverCard />
+      <div className="px-5 w-full">
         <DiscoverCard />
       </div>
 
