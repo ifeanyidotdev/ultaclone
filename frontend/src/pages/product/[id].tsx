@@ -74,7 +74,7 @@ function Product(): JSX.Element {
   return (
     <>
       <Navbar />
-      <div className=" flex w-full h-full justify-evenly content-center pt-[10em]">
+      <div className=" flex flex-col lg:flex-row w-full h-full lg:justify-evenly items-center pt-10 lg:pt-[10em] mx-auto">
         <div>
           <ItemCard
             id={product!.id}
@@ -85,7 +85,7 @@ function Product(): JSX.Element {
           />
         </div>
 
-        <div className="flex flex-col space-y-5 w-[30em] content-center pt-10">
+        <div className="flex flex-col space-y-5 w-[20em] lg:w-[30em] content-center pt-10 mx-auto">
           <input
             className="py-3 px-4 rounded-full items-center align-middle"
             type="text"
@@ -112,7 +112,7 @@ function Product(): JSX.Element {
           )}
           <button
             onClick={purchaseHandler}
-            className="py-3  bg-black text-white "
+            className="py-3 px-4 lg:px-0 bg-black text-white "
           >
             {isLoading ? " processing..." : "Buy"}
           </button>

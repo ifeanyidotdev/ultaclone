@@ -23,7 +23,7 @@ function DiscoverSection() {
         </p>
       </div>
 
-      <div className="h-[37em] flex overflow-x-auto">
+      <div className="flex overflow-x-scroll snap-x-mandatory scroll-p-3 gap-1 lg:overflow-hidden lg:overflow-no-scroll">
         <DiscoverCard />
         <DiscoverCard />
         <DiscoverCard />
@@ -37,7 +37,7 @@ function DiscoverSection() {
           Todays deals
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row items-center px-5 h-[50em]">
+      <div className="flex flex-col lg:flex-row items-center px-5 h-[40em]">
         <div className="bg-gray-50 h-[39em] w-[20em] lg:h-[36em] lg:w-[70em] flex flex-col lg:flex-row justify-center items-center space-y-3 pt-[1em] lg:pl-20 lg:ml-[10em]">
           <Image
             src={foundation_one}

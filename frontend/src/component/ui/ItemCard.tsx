@@ -15,8 +15,8 @@ function ItemCard(props: Props) {
   const router = useRouter();
   return (
     <Link href={`product/${props.id}`}>
-      <div className="h-[440px] w-[400px] bg-white">
-        <div className="px-3">
+      <div className="h-[445px] w-[375px] bg-white rounded-md">
+        <div className="px-3 pt-3">
           <Image
             className="cover"
             src={props.image}
