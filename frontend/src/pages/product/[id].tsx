@@ -74,8 +74,8 @@ function Product(): JSX.Element {
   return (
     <>
       <Navbar />
-      <div className=" flex flex-col lg:flex-row w-full h-full lg:justify-evenly items-center pt-10 lg:pt-[10em] mx-auto">
-        <div>
+      <div className=" flex flex-col lg:flex-row w-[70%] h-full justify-center lg:justify-evenly items-center pt-10 lg:pt-[10em] mx-auto">
+        <div className="">
           <ItemCard
             id={product!.id}
             name={product!.name}
